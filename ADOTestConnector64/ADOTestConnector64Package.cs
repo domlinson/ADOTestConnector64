@@ -163,6 +163,15 @@ namespace ADOTestConnector64
             }
         }
 
+        public bool PickleCount
+        {
+            get
+            {
+                OptionPageGrid page = (OptionPageGrid)GetDialogPage(typeof(OptionPageGrid));
+                return page.PickleCount;
+            }
+        }
+
         public string ProjectName
         {
             get
@@ -279,6 +288,10 @@ namespace ADOTestConnector64
         [DisplayName("Update test case Title?")]
         [Description("If true we will set the Test Case Title to that found in the VS file.")]
         public bool UpdateTestCaseTitle { get; set; } = false;
+        [Category("Labelling Settings")]
+        [DisplayName("Include Pickle Parameter?")]
+        [Description("If true we will include the Pickle Count in the parameters. Not yet implemented to ReqNRoll")]
+        public bool PickleCount { get; set; } = false;
 
         [Category("Storage")]
         [DisplayName("Current Association Dll Name")]
